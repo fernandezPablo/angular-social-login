@@ -1,0 +1,109 @@
+<div class="container" style="max-width: 550px">
+  <h2 class="text-center mb-5">Angular Login with Google and Facebook</h2>
+
+  <div *ngIf="loggedInGoogle === false">
+    <div>
+      <button type="button" (click)="signInWithGoogle()" class="btn btn-danger">
+        Login with Google
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="loggedInGoogle === true">
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" [src]="googleUser.photoUrl" alt="Card image cap">
+        <div class="card-body">
+            <div class="form-group">
+                <label>First Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  [value]="googleUser.firstName"
+                  id="firstname"
+                  readonly
+                />
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  [value]="googleUser.lastName"
+                  id="lastname"
+                  readonly
+                />
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  [value]="googleUser.email"
+                  id="email"
+                  readonly
+                />
+              </div>
+          
+              <button type="button" (click)="signOut()" class="btn btn-primary btn-block">
+                Log Out
+              </button>
+    
+        </div>
+      </div>
+
+    </div>
+
+    <div *ngIf="loggedInFacebook === false">
+    <div>
+        <button type="button" (click)="signInWithFB()" class="btn btn-primary">
+        Login with Facebook
+        </button>
+    </div>
+    </div>
+
+    <div *ngIf="loggedInFacebook === true">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" [src]="facebookUser.photoUrl" alt="Card image cap">
+            <div class="card-body">
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      [value]="facebookUser.firstName"
+                      id="firstname"
+                      readonly
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label>Last Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      [value]="facebookUser.lastName"
+                      id="lastname"
+                      readonly
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label>Email</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      [value]="facebookUser.email"
+                      id="email"
+                      readonly
+                    />
+                  </div>
+              
+                  <button type="button" (click)="signOut()" class="btn btn-primary btn-block">
+                    Log Out
+                  </button>
+        
+            </div>
+          </div>
+    </div>
+    
+
+</div>
